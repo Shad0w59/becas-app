@@ -1,0 +1,100 @@
+<h2>Solicitar Beca</h2>
+
+<div class="row justify-content-md-center">
+
+  <div class="row justify-content-center align-items-center">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-center align-items-center">
+          Título:
+          {{beca.title}}
+        </h4>
+        <p>Importe: {{beca.importe}} €</p>
+        <p>Tipo de Estudiante: {{beca.estu}} </p>
+        <p>Convocatorias: {{beca.conv}} </p>
+        <p>Requisitos: {{beca.requisitos}}</p>
+        <p>Fecha de Resolución: {{beca.fechaReso}}</p>
+        <p>Tipo de Beca: {{beca.tipoBeca}}</p>
+        <p>Descripción: {{beca.description}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="container">
+  <form action="/solicitud/new-solicitud" method="POST">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Titulo de la Beca solicitada</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="titleBeca"
+          name="titleBeca"
+          value="{{beca.title}}"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Nombre del solicitante</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre y Apellidos..."
+          required="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">DNI</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="dni"
+          name="dni"
+          placeholder="DNI..."
+          required="true"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="estu">Tipo de estudiante</label>
+      </div>
+      <div class="col-75">
+        <select id="tipoAlumno" name="tipoAlumno">
+          <option value="Grado">Grado</option>
+          <option value="Master">Master</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Investigacion">Investigación</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Matriculado en</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="matriculado"
+          name="matriculado"
+          placeholder="Estudios en los que estas matriculado/a..."
+          required="true"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <input type="submit" value="Solicitar" />
+    </div>
+  </form>
+</div>

@@ -1,0 +1,274 @@
+<h2>Añadir Nueva Beca</h2>
+<br />
+
+<div class="container">
+  <form action="/becas/new-beca" method="POST" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Título de la beca</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Nombre de la beca..."
+          required="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Institución que convoca la Beca</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="encargado"
+          name="encargado"
+          placeholder="Institución que convoca la beca..."
+          required="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Importe</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="importe"
+          name="importe"
+          placeholder="Importe de la beca..."
+          required="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="estu">Tipo de estudiante</label>
+      </div>
+      <div class="col-75">
+        <select id="estu" name="estu">
+          <option value="Grado">Grado</option>
+          <option value="Master">Master</option>
+          <option value="Grado y Master">Grado y Master</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Investigacion">Investigación</option>
+          <option value="Titulos Própios">Titulos Própios</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Convocatoria</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="conv"
+          name="conv"
+          placeholder="Convocatoria de la beca..."
+          required="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Nº de ayudas ofertadas</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          id="NumAyudas"
+          name="NumAyudas"
+          placeholder="Nº de ayudas ofertadas..."
+          required="true"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="tipoBeca">Tipo de Beca</label>
+      </div>
+      <div class="col-75">
+        <select id="tipoBeca" name="tipoBeca">
+          <option value="Ayuda al estudio">Ayuda al estudio</option>
+          <option value="Alojamiento">Alojamiento</option>
+          <option value="Idiomas">Idiomas</option>
+          <option value="Deportes">Deportes</option>
+          <option value="Desplazamiento">Desplazamiento</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Fecha de inicio de la publicación</label>
+      </div>
+      <div class="col-75" style="font-size:large">
+        <input
+          type="date"
+          id="fechaIniPub"
+          name="fechaIniPub"
+          placeholder="Fecha de inicio de de la publicación..."
+          required="true"
+        />
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="fname">Fecha de fin de la publicación</label>
+      </div>
+      <div class="col-75" style="font-size:large">
+        <input
+          type="date"
+          id="fechaFinPub"
+          name="fechaFinPub"
+          placeholder="Fecha de fin de de la publicación..."
+          required="true"
+        />
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="fname">Presupuesto total</label>
+      </div>
+      <div class="col-75" style="font-size:large">
+        <input
+          type="number"
+          id="presTotal"
+          name="presTotal"
+          placeholder="Presupuesto total..."
+          required="true"
+        />
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Requisitos</label>
+      </div>
+      <div class="col-75">
+        <textarea
+          id="requisitos"
+          name="requisitos"
+          placeholder="Requisitos del solicitante..."
+          style="height:100px"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Descripción</label>
+      </div>
+      <div class="col-75">
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Descripción de la beca..."
+          style="height:100px"
+          required="true"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Resolución</label>
+      </div>
+      <div class="col-75" style="font-size:large">
+        <input
+          type="date"
+          id="fechaReso"
+          name="fechaReso"
+          placeholder="Resolución de la Beca..."
+          required="true"
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Estado de la convocatoria</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="estado"
+          id="estado"
+          value="Abierta"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Abierta
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="estado"
+          id="estado"
+          value="Cerrada"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+          Cerrada
+        </label>
+      </div>
+    </div>
+        <div class="row">
+      <div class="col-25">
+        <label for="fname">Financiación externa de la universidad</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="financiacion"
+          id="financiacion"
+          value="Ual"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Ual
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="financiacion"
+          id="financiacion"
+          value="Externa"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+          Externa
+        </label>
+      </div>
+    </div>
+ <div class="row">
+      <div class="col-25">
+        <label for="fname">Adjuntar documentos</label>
+      </div>
+      <div class="col-75"> 
+      <div class="form-group ">
+        <div class="input-group ">
+          <div class="custom-file ">
+            <input type="file" name="file" class="custom-file-input" id="inputGroupFile"
+              aria-describedby="inputGroupFileAddon"  />
+            <label class="custom-file-label border" for="inputGroupFile">Seleccionar archivos</label>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    <br />
+    <div class="row">
+      <input type="submit" value="Añadir" />
+    </div>
+    
+  </form>
+</div>

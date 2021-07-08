@@ -1,0 +1,215 @@
+<h3>Editar beca</h3>  
+<br> 
+<form action="/becas/edit-beca/{{beca._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_method" value="PUT">
+  <div class="container">
+  <form action="/becas/new-beca" method="POST">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Título de la beca</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="title" name="title" value="{{beca.title}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Institución que convoca la Beca</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="encargado" name="encargado" value="{{beca.encargado}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Importe</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="importe" name="importe" value="{{beca.importe}}">
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="estu">Tipo de estudiante</label>
+    </div>
+    <div class="col-75">
+      <select id="estu" name="estu">
+        <option value="{{beca.estu}}">{{beca.estu}}</option>
+        <option value="Grado">Grado</option>
+        <option value="Master">Master</option>
+        <option value="Grado y Master">Grado y Master</option>
+        <option value="Doctorado">Doctorado</option>
+        <option value="Investigacion">Investigación</option>
+        <option value="Titulos Própios">Titulos Própios</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Convocatoria</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="conv" name="conv" value="{{beca.conv}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Nº de ayudas ofertadas</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="NumAyudas" name="NumAyudas" value="{{beca.NumAyudas}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="tipoBeca">Tipo de Beca</label>
+    </div>
+    <div class="col-75">
+      <select id="tipoBeca" name="tipoBeca">
+        <option value="{{beca.tipoBeca}}">{{beca.tipoBeca}}</option>
+        <option value="Ayuda">Ayuda al estudio</option>
+        <option value="Alojamiento">Alojamiento</option>
+        <option value="Idiomas">Idiomas</option>
+        <option value="Deportes">Deportes</option>
+        <option value="Desplazamiento">Desplazamiento</option>
+      </select>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Fecha de inicio de la publicación</label>
+    </div>
+     <div class="col-75" style="font-size:large">
+      <datagrid>{{beca.fechaIniPub}}</datagrid>
+      <input type="date" id="fechaIniPub" name="fechaIniPub" value="{{beca.fechaIniPub}}">
+      
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Fecha de fin de la publicación</label>
+    </div>
+     <div class="col-75" style="font-size:large">
+       <datagrid>{{beca.fechaFinPub}}</datagrid>
+      <input type="date" id="fechaFinPub" name="fechaFinPub" value="{{beca.fechaFinPub}}">
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-25">
+      <label for="lname">Presupuesto total</label>
+    </div>
+    <div class="col-75" style="font-size:large">
+      <input type="number" id="presTotal" name="presTotal" value="{{beca.presTotal}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Requisitos</label>
+    </div>
+    <div class="col-75">
+      <textarea id="requisitos" name="requisitos" value ="{{beca.requisitos}}" style="height:100px">{{beca.requisitos}}</textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Descripción</label>
+    </div>
+    <div class="col-75">
+      <textarea id="description" name="description" value ="{{beca.description}}" style="height:100px">{{beca.description}}</textarea>
+    </div>
+  </div>
+   <div class="row">
+    <div class="col-25">
+      <label for="lname">Resolución</label>
+    </div>
+    <div class="col-75" style="font-size:large"> <datagrid>{{beca.fechaReso}}</datagrid>
+      <input type="date" id="fechaReso" name="fechaReso" value="{{beca.fechaReso}}">
+    </div>
+  </div>
+     <div class="row">
+      <div class="col-25">
+        <label for="lname">Estado de la convocatoria</label>
+      </div>
+      <div class="form-check"> <datagrid>{{beca.estado}}   &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; </datagrid>
+       
+        <input
+          class="form-check-input"
+          type="radio"
+          name="estado"
+          id="estado"
+          value="Abierta"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Abierta
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="estado"
+          id="estado"
+          value="Cerrada"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+          Cerrada
+        </label>
+      </div>
+    </div>
+        <div class="row">
+      <div class="col-25">
+        
+        <label for="lname">Financiación externa de la universidad</label>
+        
+      </div>
+       
+      <div class="form-check">  <datagrid>{{beca.financiacion}}   &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; </datagrid>
+        <input
+          class="form-check-input"
+          type="radio"
+          name="financiacion"
+          id="financiacion"
+          value="Ual"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Ual
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="financiacion"
+          id="financiacion"
+          value="Externa"
+          checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+          Externa
+        </label>
+      </div>
+    </div>
+    <br>
+ <div class="row">
+      <div class="col-25">
+        <label for="lname">Adjuntar documentos</label>
+      </div>
+      <div class="col-75"> 
+      <div class="form-group ">
+        <div class="input-group ">
+          <div class="custom-file ">
+            <input type="file" name="file" class="custom-file-input" id="inputGroupFile"
+              aria-describedby="inputGroupFileAddon"  />
+            <label class="custom-file-label border" for="inputGroupFile">Seleccionar archivos</label>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Editar">
+  </div>
+  </form>
+</div>

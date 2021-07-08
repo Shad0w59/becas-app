@@ -1,0 +1,23 @@
+<h3>Mis Solicitudes</h3>
+<br />
+{{#each solicitud}}
+<div class="row">
+<div class="col-md-4" style="margin-bottom: 30px;">
+      <div class="card">
+        <div class="card-body">
+        <h4 class="card-title d-flex justify-center align-items-center">
+          Titulo de la Beca:
+          {{titleBeca}}
+        <h4 class="card-title d-flex justify-center align-items-center">
+          Nombre:
+          {{nombre}}
+        </h4>
+        <p>Tipo Alumno: {{tipoAlumno}}</p>
+        <p>Dni: {{dni}} </p>
+        <p>Matriculado en: {{matriculado}} </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{/each}} 

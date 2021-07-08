@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Título</th>
+      <th scope="col">Importe</th>
+      <th scope="col">Tipo de Estudiante</th>
+      <th scope="col">Convocatorias</th>
+      <th scope="col">Nº de Ayudas</th>
+      <th scope="col">Tipo de Beca</th>
+      <th scope="col">Estado de la convocatoria</th>
+      <th scope="col">Ver Beca</th>
+      <th scope="col">Solicitar Beca</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each becas}}
+      <tr>
+
+        <td>{{title}}</td>
+        <td>{{importe}} €</td>
+        <td>{{estu}}</td>
+        <td>{{conv}}</td>
+        <td>{{NumAyudas}}</td>
+        <td>{{tipoBeca}}</td>
+        <td>{{estado}}</td>
+        <td>
+          <a href="/becas/get-beca/{{_id}}"><button
+              type="button"
+              class="btn btn-primary btn-sm"
+            >Ver</button></a></td>
+        <td>
+          <a href="/solicitud/add/{{_id}}"><button
+              type="button"
+              class="btn btn-primary btn-sm"
+            >Solicitar</button></a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
